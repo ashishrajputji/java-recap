@@ -21,8 +21,6 @@ public class stringCRUD {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        char input;
-        do{
         System.out.println("Enter a string");
         StringBuilder sb = new StringBuilder(scan.nextLine());
         char ch;
@@ -39,11 +37,7 @@ public class stringCRUD {
             default:
                 System.out.println("Invalid input");
         }
-        System.out.println("Do you want to enter another string");
-        input = scan.next().charAt(0);
-        
-    }while(input=='y');
-    scan.close();
+        scan.close();
     }
 
 }
