@@ -9,7 +9,7 @@ public class deleteChar {
         System.out.println("Enter character to delete from the string");
         ch = scan.next().charAt(0);
         scan.close();
-        for(int i=0;i<sb.length()-1;i++){
+        for(int i=0;i<sb.length();i++){
             if(sb.charAt(i)==ch){
                 sb.deleteCharAt(i);
             }
