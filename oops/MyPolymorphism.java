@@ -11,6 +11,7 @@ class FirstPolymorphism{
     FirstPolymorphism(String name,int age){
         this.name = name;
         this.age = age;
+        System.out.println("Name Before "+name+" age before "+age);
     }
 }
 public class MyPolymorphism {
