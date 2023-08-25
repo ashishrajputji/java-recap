@@ -14,6 +14,12 @@ public class DynamicInputArrayList {
             list.add(i,scan.nextInt());
         }
         scan.close();
+        System.out.print("Inputed  list ");
+        System.out.println(list);
+
+        // Delete element form list
+        list.remove(3);
+        System.out.print("List after removing element at index 3 ");
         System.out.println(list);
     }
 }
