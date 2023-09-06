@@ -48,11 +48,66 @@ class InsLL{
         size++;
     }
 
+    // Deletion of elements in LinkedList
+    // Delete First
+    public int deleteFirst(){
+        int value = head.value;
+        head = head.next;
+        if(head.next == null){
+            tail.next = null;
+        }
+        size--;
+        return value;
+    }
+    // Delete Last element
+    public Node get(int index){
+        Node node = head;
+        for(int i=0;i<index;i++){
+            node = node.next;
+        }
+        return node;
+    }
+    public int DeleteLast(){
+        if(size <=1){
+            return deleteFirst();
+        }
+        Node SecondLast = get(size-2);
+        int val = tail.value;
+        tail = SecondLast;
+        tail.next = null;
+        return val;
+    }
+    // Delete at any Index
+    public int Delete(int index){
+        if(index <= 1){
+            return deleteFirst();
+        }
+        if(index == size-1){
+            return DeleteLast();
+        }
+        Node prev = get(index-1);
+        int value = prev.next.value;
+        prev.next = prev.next.next;
+
+        return value;
+    }
+
+    // Find any node
+    public Node find(int val){
+        Node temp = head;
+        while(temp != null){
+            if(temp.value == val){
+                return temp;
+            }
+        }
+        return null;
+    }
+
     // Display or print Linked List
     public void display(){
         Node temp = head;
         while(temp!=null){
-            System.out.print(" -> "+temp.value+" and its next is "+temp.next);
+            System.out.print(" -> "+temp.value);
             temp = temp.next;
         }
     }
@@ -83,5 +138,16 @@ public class InsertLinkedList {
         l.insertAtIndex(222, 3);
 
         l.display();
+
+        System.out.println("\n After deleting head value "+l.deleteFirst());
+        l.display();
+
+        System.out.println("\n After deleting tail value "+l.DeleteLast());
+        l.display();
+        System.out.println("\n After deleting at index  value "+l.Delete(2));
+        l.display();
+
+
+        System.err.println("\n Element found whose node address is \t"+l.find(2));
     }
 }
